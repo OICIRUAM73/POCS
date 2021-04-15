@@ -42,6 +42,10 @@
       document.getElementById("inputBox").addEventListener('blur', function (e) {
         document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
       });
+      document.getElementById("inputBox").addEventListener('focusout', function (e) { 
+         document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
+       });
+
     };
 
   </script>
