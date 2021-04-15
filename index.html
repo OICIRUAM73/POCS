@@ -34,10 +34,12 @@
     } 
   </style>
   <script>
-    document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";
-    document.getElementById("inputBox").addEventListener('focus', function (e) {
-      document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
-    });
+    window.onload = function () {
+      document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";
+      document.getElementById("inputBox").addEventListener('focus', function (e) {
+        document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
+      });
+    };
 
   </script>
 </head>
