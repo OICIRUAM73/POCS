@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    .header, .footer, .content {
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+
+    .header {
+      background: gray;
+      height:50px;
+      top: 0;
+    }
+
+    .content {
+      top: 50px;
+      bottom: 75px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .footer {
+      background: lightgray;
+      height:75px;
+      bottom: 0;
+    }
+
+    .safari.keyboard .container {
+      bottom: 270px;
+    }
+
+    /*To prevent auto-zoom in Safari*/
+    .safari input[type='text'] {
+      font-size: 16px;
+    }
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setPlatformInfo();
+        var inputBox = document.querySelector('.safari #inputBox');
+        if (inputBox) {
+          inputBox.addEventListener('focus', function (e) {
+            document.body.classList.add('keyboard');
+            setTimeout(function () {
+              window.scrollTo(0, 0);
+            }, 200);
+          });
+
+          inputBox.addEventListener('blur', function (e) {
+            document.body.classList.remove('keyboard');
+          });
+        }
+      });
+
+      function setPlatformInfo() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') != -1) {
+          if (ua.indexOf('chrome') > -1) {
+            document.body.classList.add('chrome');
+          } else {
+            document.body.classList.add('safari');
+          }
+        }
+      }
+
+  </script>
+</head>
+<body>
+  <div id="cont" class="container">
+    <div class="header">
+      AQUI VA EL HEADER
+    </div>
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus eget metus sed porta. Etiam iaculis orci
+      lorem, quis lacinia justo cursus quis. Fusce ultricies justo turpis, ut malesuada nulla imperdiet vitae. Nunc
+      commodo rutrum lacus. Ut bibendum congue tincidunt. Nullam ut ligula sed libero aliquam elementum. Integer congue
+      enim et nunc tincidunt efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+      himenaeos. Morbi semper tortor eget sem posuere, in malesuada quam commodo. Pellentesque scelerisque auctor ante at
+      tempor. Phasellus at condimentum massa. Nullam ante nisi, rutrum sit amet dolor sit amet, tincidunt faucibus lorem.
+      Nunc sed augue sed leo mattis gravida eu ac justo. Cras sodales tempor est eget vehicula. In ultrices, ipsum nec
+      iaculis porttitor, dolor diam dapibus dui, quis condimentum elit erat ut nibh. Praesent ipsum magna, fringilla et
+      laoreet vitae, condimentum et nisl.
+  
+      Morbi magna tellus, dictum ac suscipit sit amet, consectetur vel justo. Vestibulum quis tempor nunc. Aliquam erat
+      volutpat. Quisque condimentum leo at fringilla porta. Suspendisse molestie, felis eu euismod efficitur, nulla nisi
+      ultricies ligula, in feugiat nisl libero sed enim. Morbi varius iaculis est vitae aliquam. Maecenas maximus libero
+      ac nisi congue, id fringilla justo consectetur. Ut nibh metus, molestie id fringilla vitae, pulvinar id ex. Quisque
+      nisi libero, tincidunt quis magna blandit, fermentum tincidunt nisi. Nullam sed accumsan nibh, sed eleifend ipsum.
+      Vivamus imperdiet, enim ac hendrerit laoreet, odio justo congue sapien, id bibendum sem ipsum eu nisi.
+  
+      Aenean mattis nunc ac placerat mollis. Nunc ut ligula laoreet, interdum magna non, porta augue. Orci varius natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur ut tortor nisi. Maecenas ultricies leo
+      at eros facilisis, vitae aliquam ante congue. Proin ac sodales metus. Fusce sit amet accumsan massa. Phasellus eu
+      libero eleifend, congue metus at, aliquet tellus. Donec pharetra iaculis velit ut semper. Praesent congue ut magna
+      ut fringilla.
+  
+      In viverra ligula vel facilisis pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+      cubilia curae; Proin vitae euismod tellus. Phasellus dictum vitae dolor laoreet porta. Morbi id aliquet purus. Sed
+      vel ullamcorper mi. Donec mattis leo et imperdiet pulvinar. Quisque eu tincidunt lectus.
+  
+      Curabitur volutpat neque lorem, eget hendrerit elit posuere eu. Aenean id vestibulum mauris. Nam pretium nisl eu
+      auctor tincidunt. Mauris in nunc nibh. Fusce feugiat diam a odio ultricies fermentum. Vivamus egestas ligula a ex
+      lobortis consectetur. Maecenas in nulla nec purus gravida pulvinar vel non elit.
+      <p id="size"></p>
+    </div>
+    <div class="footer">
+      <input id="inputBox" type="text" />
+    </div>
+  </div>
+</body>
+</html>
