@@ -38,12 +38,15 @@
       document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";
       document.getElementById("inputBox").addEventListener('focus', function (e) {
         document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
+        document.getElementById("size").innerHTML = document.getElementById("cont").style.height
       });
       document.getElementById("inputBox").addEventListener('blur', function (e) {
         document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
+        document.getElementById("size").innerHTML = document.getElementById("cont").style.height
       });
       document.getElementById("inputBox").addEventListener('focusout', function (e) { 
          document.getElementById("cont").style.height = document.documentElement.clientHeight + "px";    
+         document.getElementById("size").innerHTML = document.getElementById("cont").style.height
        });
 
     };
@@ -86,6 +89,7 @@
       Curabitur volutpat neque lorem, eget hendrerit elit posuere eu. Aenean id vestibulum mauris. Nam pretium nisl eu
       auctor tincidunt. Mauris in nunc nibh. Fusce feugiat diam a odio ultricies fermentum. Vivamus egestas ligula a ex
       lobortis consectetur. Maecenas in nulla nec purus gravida pulvinar vel non elit.
+      <p id="size"></p>
     </div>
     <div class="footer">
       <input id="inputBox" type="text" />
